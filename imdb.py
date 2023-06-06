@@ -27,7 +27,7 @@ class IMDB_Model:
         self.__preprocess()
         self.__build_network()
         self.__validate_training()
-        
+
     def train(self):
         self.__load_data()
         self.__preprocess()
@@ -71,7 +71,7 @@ class IMDB_Model:
                     layers.Dense(
                         layer["neurons"],
                         activation=layer["activation"],
-                        input_shape=(10000,),
+                        input_shape=(self.num_words,),
                     ),
                 )
             else:
